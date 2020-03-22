@@ -56,7 +56,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func keyboardWillShow(_ notification:Notification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = -getKeyboardHeight(notification)
     }
     
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
@@ -67,7 +67,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = 0
     }
 
     @IBAction func selectImage(_ sender: Any) {
@@ -101,6 +101,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memeImagePicker.sourceType = .camera
         present(memeImagePicker, animated: true, completion: nil)
     }
+
     
     
     
