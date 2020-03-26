@@ -41,6 +41,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        memeImage.contentMode = UIView.ContentMode.scaleAspectFill
         //  Top TextField Attributes
         toptextField.delegate = self
         toptextField.defaultTextAttributes = memeTextAttributes
@@ -177,7 +178,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func save() {
         let memedImage = generatedMemedImage()
-        _ = Meme(topText: toptextField.text!, baseText: baseTextField.text!, originalImage: memeImage.image!, memedImage: memedImage )
+        _ = Meme(topText: toptextField.text, baseText: baseTextField.text, originalImage: memeImage.image, memedImage: memedImage )
 
     }
     
